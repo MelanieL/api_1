@@ -1,17 +1,55 @@
+// Our code
+
 const pairingApp = {};
 
-pairingApp.getDrink = (query) => {
+pairingApp.getDrink = (aDrink) => {
     $.ajax({
-        url: 'http://lcboapi.com/products',
-        data: 'jsonp',
+        url: 'http://lcboapi.com/products?',
+        dataType: 'jsonp',
         method: 'GET',
+        access_key: 'MDphODVlYjk0Ni0xMDQ1LTExZTgtYTg0My1lMzE1YjBiZWVjYzI6RHo3bktkcG9TNkt5b2FqZHFxOFpkSEVHWGoxVEVvZ2k5MmtZ',
         data: {
-            access_key: 'MDphODVlYjk0Ni0xMDQ1LTExZTgtYTg0My1lMzE1YjBiZWVjYzI6RHo3bktkcG9TNkt5b2FqZHFxOFpkSEVHWGoxVEVvZ2k5MmtZ'
+            q: 'lager+canada+craft',
+            // 'http;www.lcmbo.com/product/product/${orudoct.id}'
+            // q: '`${answer1}+${answer2}+${answer3}`',
+            per_page: 50
         }
-    }).then(function(data){
-        console.log(data);
+    }).then((res) => {
+        const displayDrink = res.result;
+        console.log(displayDrink);
     });
 }
+
+pairingApp.init = () => {
+    pairingApp.getDrink();
+}
+
+// Document ready
+$(function () {
+    pairingApp.init();
+});
+
+// Esther's code starts
+
+// function getDrink(aDrink) {
+//     return $.ajax({
+//         url: 'http://lcboapi.com/products',
+//         method: 'GET',
+//         dataType: 'jsonp',
+//         access_key: 'MDphODVlYjk0Ni0xMDQ1LTExZTgtYTg0My1lMzE1YjBiZWVjYzI6RHo3bktkcG9TNkt5b2FqZHFxOFpkSEVHWGoxVEVvZ2k5MmtZ',
+//         data: {
+//             q: aDrink
+//         }
+
+//     })
+//         .then((res) => {
+//             const displayDrink = res.result;
+//             console.log(displayDrink[0].name);
+//         });
+// }
+
+// getDrink();
+// Esther's code ends
 
 // pseudo code
 // we prompt users with four questions
