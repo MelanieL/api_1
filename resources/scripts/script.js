@@ -12,6 +12,7 @@ pairingApp.getDrink = (aDrink) => {
             q: 'lager+canada+craft',
             // 'http;www.lcmbo.com/product/product/${orudoct.id}'
             // q: '`${answer1}+${answer2}+${answer3}`',
+            // this is my change
             per_page: 50
         }
     }).then((res) => {
