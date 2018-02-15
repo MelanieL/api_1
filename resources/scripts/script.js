@@ -6,14 +6,14 @@ pairingApp.getDrink = (aDrink) => {
     $('form').on('submit', function (e) {
         e.preventDefault();
         
-        // const userPriceChoice = $('input[name="q1"]:checked').attr('class');
+    //     // const userPriceChoice = $('input[name="q1"]:checked').attr('class');
 
-        // const userPriceChoiceRange = userPriceChoice
-        // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
+    //     // const userPriceChoiceRange = userPriceChoice
+    //     // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
-        // console.log(userPriceChoice);
-        // console.log(userOriginChoice);
+    //     // console.log(userPriceChoice);
+    //     // console.log(userOriginChoice);
         // console.log(userTypeChoice);
 
         // const userchoice1 = 
@@ -25,7 +25,7 @@ pairingApp.getDrink = (aDrink) => {
             method: 'GET',
             access_key: 'MDphODVlYjk0Ni0xMDQ1LTExZTgtYTg0My1lMzE1YjBiZWVjYzI6RHo3bktkcG9TNkt5b2FqZHFxOFpkSEVHWGoxVEVvZ2k5MmtZ',
             data: {
-                // q: 'lager+canada+can',
+                // q: 'lager pilsner+canada',
                 q: `${userOriginChoice}+${userTypeChoice}`,
                 // order: total_package_units
                 // Images 'http;www.lcmbo.com/product/product/${orudoct.id}'
