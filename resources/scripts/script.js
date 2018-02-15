@@ -10,6 +10,7 @@ pairingApp.getDrink = (aDrink) => {
 
     //     // const userPriceChoiceRange = userPriceChoice
     //     // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
+        const userPriceChoice = $('input[name="q1"]:checked').attr('class');
         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
     //     // console.log(userPriceChoice);
@@ -34,12 +35,37 @@ pairingApp.getDrink = (aDrink) => {
             }
         }).then((res) => {
             const displayDrink = res.result;
-            console.log(displayDrink);
+            // console.log(displayDrink);
             // pairingApp.displayDrinkAnswers(answers);
+            // console.log(singlesOnly);
+            // debugger;
+            pairingApp.filterByUnits(displayDrink);
         });
-    })
+        // const singlesOnly = displayDrink.filter((item) => {
+            //     return item.total_package_units === 1
+            //     // console.log(singlesOnly);
+            // })
+            // console.log(singlesOnly);
+            // pairingApp.filterByPrice(displayDrink);
+        })
 }
 
+pairingApp.filterByUnits = (answers) => {
+    // console.log(answers);
+    const singlesOnly = answers.filter((item) => {
+        // console.log(item.total_package_units);
+        return item.total_package_units === 1;
+    });
+    console.log(singlesOnly);
+    // singlesOnly.forEach((answers) => {
+    //     console.log(answers);
+    // });
+    pairingApp.filterAgain(singlesOnly);
+}
+
+pairingApp.filterAgain = (singlesOnly) => {
+
+}
 // pairingApp.displayDrinkAnswers = (answers) => {
     // This part is to eliminate multipacks
     // const singlesOnly = displayDrink.filter(() => {
