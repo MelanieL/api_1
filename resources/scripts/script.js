@@ -17,12 +17,29 @@ pairingApp.getDrink = (aDrink) => {
         }
     }).then((res) => {
         const displayDrink = res.result;
-        console.log(displayDrink);
+        // console.log(displayDrink);
+        // pairingApp.displayDrinkAnswers(answers);
     });
+}
+
+// pairingApp.displayDrinkAnswers = (answers) => {
+
+// }
+
+// This is where our events go
+pairingApp.events = () => {
+    $('form').on('submit', function(){
+        const userPriceChoice = $('input[name="q1"]:checked').attr('class');
+        console.log(userPriceChoice);
+        // const userchoice1 = 
+        // const userchoice2 = 
+        // const userchoice3 = 
+    })
 }
 
 pairingApp.init = () => {
     pairingApp.getDrink();
+    pairingApp.events();
 }
 
 // Document ready
@@ -30,29 +47,6 @@ $(function () {
     pairingApp.init();
 });
 
-// Esther's code starts
-
-// function getDrink(aDrink) {
-//     return $.ajax({
-//         url: 'http://lcboapi.com/products',
-//         method: 'GET',
-//         dataType: 'jsonp',
-//         access_key: 'MDphODVlYjk0Ni0xMDQ1LTExZTgtYTg0My1lMzE1YjBiZWVjYzI6RHo3bktkcG9TNkt5b2FqZHFxOFpkSEVHWGoxVEVvZ2k5MmtZ',
-//         data: {
-//             q: aDrink
-//         }
-
-//     })
-//         .then((res) => {
-//             const displayDrink = res.result;
-//             console.log(displayDrink[0].name);
-//         });
-// }
-
-// getDrink();
-// Esther's code ends
-
-// pseudo code
 // we prompt users with four questions
 
 // question 1: 
