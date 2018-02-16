@@ -32,7 +32,6 @@ pairingApp.filterByUnits = (answers) => {
     const singlesOnly = answers.filter((item) => {
         return item.total_package_units === 1;
     });
-    // console.log(singlesOnly);
     pairingApp.filterByPrice(singlesOnly);
 }
 
@@ -47,55 +46,46 @@ pairingApp.filterByPrice = (singlesOnly) => {
         });
 
     const expensiveAnswers = singlesOnly.filter((item) => {
-        return item.price_in_cents > 500;
+            return item.price_in_cents > 500;
         });
 
     if (pairingApp.userPriceChoice === "cheap") {
-        console.log(cheapAnswers);
+        // console.log(cheapAnswers);
+        const finalAnswer = cheapAnswers;
+
+        finalAnswer.forEach((drink) => {
+                console.log(drink);
+                // const title = $('<h2>').text(art.title);
+                // const artist = $('<p>').text(art.principalOrFirstMaker);
+                $('.api-answer').append(`<img src=${drink.image_url}>`);
+                $('.api-answer').append(`<p>${drink.name}</p>`);
+                // const container = $('<div>').append(title, artist, image);
+                // $('.api-answer').append(container);
+            })
+            
+            // console.log(finalAnswer);
+
+        // pairingApp.displayDrinkAnswers(answers);
     } else if (pairingApp.userPriceChoice === "mid") {
-        console.log(midAnswers);
+        // console.log(midAnswers);
+        const finalAnswer = midAnswers;
+        // console.log(finalAnswer);
+        // pairingApp.displayDrinkAnswers(answers);
+
     } else if (pairingApp.userOriginChoice === "expensive") {
-        console.log(expensiveAnswers);
+        // console.log(expensiveAnswers);
+        const finalAnswer = expensiveAnswers;
+        // console.log(finalAnswer);
+        // pairingApp.displayDrinkAnswers(answers);
     } else {
         console.log("No beers match your selections");
     }
-
+    // pairingApp.displayDrinkAnswers(answers);
 }
-
-// This is a test, and only a test
-// Testing if/else
-// pairingApp.filterByPrice = (singlesOnly) => {
-//     const finalSelections = singlesOnly.filter((item) => {
-//             if (item.price_in_cents <= 250) {
-//                 return item.price_in_cents <= 250;
-//             } else if (item.price_in_cents >= 251 && item.price_in_cents <= 499) {
-//                 return item.price_in_cents >= 251 && item.price_in_cents <= 499;
-
-//             } else if (item.price_in_cents >= 500) {
-//                 return item.price_in_cents >= 500;
-//             } else {
-//                 console.log("No beers match your selections");
-//             }
-//         }); 
-//         console.log(finalSelections);
-//     }
-
-
-// pairingApp.filterByPrice = (singlesOnly) => {
-//     const expensiveAnswers = singlesOnly.filter((item) => {
-//         return item.price_in_cents <= 250;
-//     });
-//     console.log(expensiveAnswers);
-// }
-
-
-
+// console.log(finalAnswer);
 
 // pairingApp.displayDrinkAnswers = (answers) => {
-    // This part is to eliminate multipacks
-    // const singlesOnly = displayDrink.filter(() => {
-    //     return item.total_package_units === 1
-    // })
+//     console.log(answers);
 // }
 
 // // This is where our events go
