@@ -1,3 +1,7 @@
 @import "components/normalize";
 @import "components/variables";
 @import "components/typography";
+
+body {
+    font-family: $bodyFont;
+}
