@@ -5,21 +5,10 @@ const pairingApp = {};
 pairingApp.getDrink = (aDrink) => {
     $('form').on('submit', function (e) {
         e.preventDefault();
-        
-    //     // const userPriceChoice = $('input[name="q1"]:checked').attr('class');
-
-    //     // const userPriceChoiceRange = userPriceChoice
-    //     // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
-        const userPriceChoice = $('input[name="q1"]:checked').attr('class');
+        // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
+        pairingApp.userPriceChoice = $('input[name="q1"]:checked').attr('class');
         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
-    //     // console.log(userPriceChoice);
-    //     // console.log(userOriginChoice);
-        // console.log(userTypeChoice);
-
-        // const userchoice1 = 
-        // const userchoice2 = 
-        // const userchoice3 = 
         $.ajax({
             url: 'http://lcboapi.com/products?',
             dataType: 'jsonp',
@@ -28,44 +17,80 @@ pairingApp.getDrink = (aDrink) => {
             data: {
                 // q: 'lager pilsner+canada',
                 q: `${userOriginChoice}+${userTypeChoice}`,
-                // order: total_package_units
                 // Images 'http;www.lcmbo.com/product/product/${orudoct.id}'
-                // q: '`${answer1}+${answer2}+${answer3}`',
                 per_page: 50,
             }
         }).then((res) => {
             const displayDrink = res.result;
-            // console.log(displayDrink);
-            // pairingApp.displayDrinkAnswers(answers);
-            // console.log(singlesOnly);
-            // debugger;
             pairingApp.filterByUnits(displayDrink);
         });
-        // const singlesOnly = displayDrink.filter((item) => {
-            //     return item.total_package_units === 1
-            //     // console.log(singlesOnly);
-            // })
-            // console.log(singlesOnly);
-            // pairingApp.filterByPrice(displayDrink);
-        })
+    })
 }
 
+// This works
 pairingApp.filterByUnits = (answers) => {
-    // console.log(answers);
     const singlesOnly = answers.filter((item) => {
-        // console.log(item.total_package_units);
         return item.total_package_units === 1;
     });
-    console.log(singlesOnly);
-    // singlesOnly.forEach((answers) => {
-    //     console.log(answers);
-    // });
-    pairingApp.filterAgain(singlesOnly);
+    // console.log(singlesOnly);
+    pairingApp.filterByPrice(singlesOnly);
 }
 
-pairingApp.filterAgain = (singlesOnly) => {
+// This works
+pairingApp.filterByPrice = (singlesOnly) => {
+    const cheapAnswers = singlesOnly.filter((item) => {
+            return item.price_in_cents <= 250;
+        }); 
+
+    const midAnswers = singlesOnly.filter((item) => {
+            return item.price_in_cents <= 500 && item.price_in_cents >= 250;
+        });
+
+    const expensiveAnswers = singlesOnly.filter((item) => {
+        return item.price_in_cents > 500;
+        });
+
+    if (pairingApp.userPriceChoice === "cheap") {
+        console.log(cheapAnswers);
+    } else if (pairingApp.userPriceChoice === "mid") {
+        console.log(midAnswers);
+    } else if (pairingApp.userOriginChoice === "expensive") {
+        console.log(expensiveAnswers);
+    } else {
+        console.log("No beers match your selections");
+    }
 
 }
+
+// This is a test, and only a test
+// Testing if/else
+// pairingApp.filterByPrice = (singlesOnly) => {
+//     const finalSelections = singlesOnly.filter((item) => {
+//             if (item.price_in_cents <= 250) {
+//                 return item.price_in_cents <= 250;
+//             } else if (item.price_in_cents >= 251 && item.price_in_cents <= 499) {
+//                 return item.price_in_cents >= 251 && item.price_in_cents <= 499;
+
+//             } else if (item.price_in_cents >= 500) {
+//                 return item.price_in_cents >= 500;
+//             } else {
+//                 console.log("No beers match your selections");
+//             }
+//         }); 
+//         console.log(finalSelections);
+//     }
+
+
+// pairingApp.filterByPrice = (singlesOnly) => {
+//     const expensiveAnswers = singlesOnly.filter((item) => {
+//         return item.price_in_cents <= 250;
+//     });
+//     console.log(expensiveAnswers);
+// }
+
+
+
+
 // pairingApp.displayDrinkAnswers = (answers) => {
     // This part is to eliminate multipacks
     // const singlesOnly = displayDrink.filter(() => {
@@ -75,21 +100,6 @@ pairingApp.filterAgain = (singlesOnly) => {
 
 // // This is where our events go
 // pairingApp.events = () => {
-//     $('form').on('submit', function(){
-//         // const userPriceChoice = $('input[name="q1"]:checked').attr('class');
-
-//         // const userPriceChoiceRange = userPriceChoice
-//         // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
-//         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
-//         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
-//         // console.log(userPriceChoice);
-//         // console.log(userOriginChoice);
-//         // console.log(userTypeChoice);
-
-//         // const userchoice1 = 
-//         // const userchoice2 = 
-//         // const userchoice3 = 
-//     })
 // }
 
 pairingApp.init = () => {
