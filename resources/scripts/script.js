@@ -42,7 +42,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
         }); 
 
     const midAnswers = singlesOnly.filter((item) => {
-            return item.price_in_cents <= 500 && item.price_in_cents >= 250;
+            return item.price_in_cents <= 499 && item.price_in_cents >= 251;
         });
 
     const expensiveAnswers = singlesOnly.filter((item) => {
@@ -51,16 +51,23 @@ pairingApp.filterByPrice = (singlesOnly) => {
 
     if (pairingApp.userPriceChoice === "cheap") {
         // console.log(cheapAnswers);
-        const finalAnswer = cheapAnswers;
+        // console.log('consolellogworks');
+        let finalAnswer = cheapAnswers;
 
         finalAnswer.forEach((drink) => {
-                console.log(drink);
-                // const title = $('<h2>').text(art.title);
-                // const artist = $('<p>').text(art.principalOrFirstMaker);
-                $('.api-answer').append(`<img src=${drink.image_url}>`);
+                // console.log(drink);
                 $('.api-answer').append(`<p>${drink.name}</p>`);
-                // const container = $('<div>').append(title, artist, image);
+                $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
+                const priceInDollars = drink.price_in_cents / 100
+                const priceRounded = (priceInDollars).toFixed(2);
+                $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
+                $('.api-answer').append(`<a class="api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
                 // $('.api-answer').append(container);
+                if(drink.image_url !== null) {
+                    $('.api-answer').append(`<img src=${drink.image_url}>`);
+                }else {
+                    $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+                }
             })
             
             // console.log(finalAnswer);
@@ -68,13 +75,47 @@ pairingApp.filterByPrice = (singlesOnly) => {
         // pairingApp.displayDrinkAnswers(answers);
     } else if (pairingApp.userPriceChoice === "mid") {
         // console.log(midAnswers);
-        const finalAnswer = midAnswers;
+        // console.log('consolelogworks');
+        let finalAnswer = midAnswers;
+
+        finalAnswer.forEach((drink) => {
+            // console.log(drink);
+            $('.api-answer').append(`<p>${drink.name}</p>`);
+            $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
+            const priceInDollars = drink.price_in_cents / 100
+            const priceRounded = (priceInDollars).toFixed(2);
+            $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
+            $('.api-answer').append(`<a class="api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
+            // $('.api-answer').append(container);
+            if (drink.image_url !== null) {
+                $('.api-answer').append(`<img src=${drink.image_url}>`);
+            } else {
+                $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+            }
+        })
         // console.log(finalAnswer);
         // pairingApp.displayDrinkAnswers(answers);
 
-    } else if (pairingApp.userOriginChoice === "expensive") {
-        // console.log(expensiveAnswers);
-        const finalAnswer = expensiveAnswers;
+    } else if (pairingApp.userPriceChoice === "expensive") {
+        console.log(expensiveAnswers);
+        console.log('consolelogworks');
+        let finalAnswer = expensiveAnswers;
+
+        finalAnswer.forEach((drink) => {
+            // console.log(drink);
+            $('.api-answer').append(`<p>${drink.name}</p>`);
+            $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
+            const priceInDollars = drink.price_in_cents / 100
+            const priceRounded = (priceInDollars).toFixed(2);
+            $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
+            $('.api-answer').append(`<a class="api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
+            // $('.api-answer').append(container);
+            if (drink.image_url !== null) {
+                $('.api-answer').append(`<img src=${drink.image_url}>`);
+            } else {
+                $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+            }
+        })
         // console.log(finalAnswer);
         // pairingApp.displayDrinkAnswers(answers);
     } else {
