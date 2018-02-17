@@ -6,14 +6,57 @@
 body {
     font-family: $bodyFont;
     width: 100%;
-    display: flex;
 }
 
+
 .wrapper {
-    width: 1080px;
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 header {
+    width: 100%;
     background: $color5;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-left: 10px;
+}
+
+header .wrapper {
     color: white;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h1, h2 {
+    text-align: center;
+    width: 80%;
+}
+
+.beer-mug-image-div img {
+    width: 100%;
+}
+
+.beer-mug-image-div {
+    max-width: 5%;
+    margin-left: 10%;
+    // height: 
+}
+
+li {
+    list-style: none;
 }
