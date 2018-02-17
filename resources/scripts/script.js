@@ -119,6 +119,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
         // console.log(finalAnswer);
         // pairingApp.displayDrinkAnswers(answers);
     } else {
+        
         console.log("No beers match your selections");
     }
     // pairingApp.displayDrinkAnswers(answers);

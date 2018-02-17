@@ -9,8 +9,12 @@
     <title>PairingApp </title>
 </head>
 <body>
-    <header>
 
+    <header>
+        <div class="wrapper">
+            <h1>Snacks are ale you need</h1>
+            <h2>Pick your beer, let the quiz pair your snack</h2>
+        </div>
     </header>
 
     <main>
@@ -80,11 +84,46 @@
             </form> 
         </div>
         
-        <div>
+        <div class="wrapper">
         <!-- snack pairings live here -->
         <!-- user is given yummy snacks that go best with their beer selections -->
-            <div class="snack-pairings">
-                
+            <div class="snack-pairings pairing-one">
+                <!-- lagers and pilsners -->
+                <ul class="food-pairings">
+                    <li>Trail Mix</li>
+                    <li>Pretzels</li>
+                    <li>Cheddar-Mild</li>
+                    <li>Havarti</li>
+                    <li>Monterrey Jack</li>
+                </ul>
+            </div>
+            <!-- Stouts and porters -->
+            <div class="snack-pairings pairing-two">
+                <ul class="food-pairings">
+                    <li>Candy Bar</li>
+                    <li>Cookies</li>
+                    <li>Cheddar-Sharp</li>
+                    <li>Aged Gouda</li>
+                </ul>
+            </div>
+            <!-- IPA's -->
+            <div class="snack-pairings pairing-three">
+                <ul class="food-pairings">
+                    <li>Potato Chips</li>
+                    <li>Buttered Popcorn</li>
+                    <li>Cheddar-Sharp</li>
+                    <li>Feta</li>
+                </ul>
+            </div>
+            <!-- sour beers -->
+            <div class="snack-pairings pairing-four">
+                <ul class="food-pairings">
+                    <li>Cheddar-Medium</li>
+                    <li>Goat Cheese</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
             <!-- users scroll through beer selection here -->
             <div class="api-answer">
@@ -95,7 +134,10 @@
     </main>
 
     <footer>
-
+        <div class="wrapper">
+            <p>&copy; Paige Power & Melanie Phillips</p>
+            <p>API Dataset: https://lcboapi.com/</p>
+        </div>
     </footer>
 
     

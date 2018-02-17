@@ -2,6 +2,18 @@
 @import "components/variables";
 @import "components/typography";
 
+
 body {
     font-family: $bodyFont;
+    width: 100%;
+    display: flex;
+}
+
+.wrapper {
+    width: 1080px;
+}
+
+header {
+    background: $color5;
+    color: white;
 }
