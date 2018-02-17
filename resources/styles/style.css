@@ -1,4 +1,15 @@
 /* Coolors Exported Palette - coolors.co/cebb90-0a244c-ebf5df-edb458-e8871e */
 /* RGB */
 body {
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.wrapper {
+  width: 1080px; }
+
+header {
+  background: #e8871e;
+  color: white; }
