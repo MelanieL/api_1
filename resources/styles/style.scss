@@ -2,6 +2,7 @@
 @import "components/variables";
 @import "components/typography";
 
+// basic styles begin
 
 body {
     font-family: $bodyFont;
@@ -16,6 +17,8 @@ body {
     display: flex;
     justify-content: center;
 }
+
+// header styles begin
 
 header {
     width: 100%;
@@ -39,7 +42,12 @@ header .wrapper {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 40px;
+    font-family: $titleFont;
+}
+
+h2 {
+    font-weight: 400;
 }
 
 h1, h2 {
@@ -55,6 +63,56 @@ h1, h2 {
     max-width: 5%;
     margin-left: 10%;
     // height: 
+}
+
+// main styles begin
+
+form {
+    width: 60%;
+    margin-top: 25px;
+}
+
+.question {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.question-one, .question-two {
+    border-bottom: .5px solid $color6;
+    padding-bottom: 30px;
+}
+
+.question-three {
+    padding-bottom: 60px;
+
+}
+
+label {
+    margin-right: 2%;
+    // padding: 20px;
+}
+
+label:hover {
+    color: $color6;
+}
+
+div.iradio_square-grey {
+    margin-right: .5%;
+    // margin-left: 2%;
+}
+
+.button-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-size: 18px;
+    background: $color5;
+    color: white;
+    padding: 16px 65px;
+    border-radius: 50px;
+    border: none;
 }
 
 li {

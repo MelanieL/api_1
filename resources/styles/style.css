@@ -529,6 +529,12 @@ template {
 
 /* Coolors Exported Palette - coolors.co/cebb90-0a244c-ebf5df-edb458-e8871e */
 /* RGB */
+body {
+  font-size: 18px; }
+
+.question p {
+  font-size: 20px; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0; }
@@ -579,7 +585,11 @@ header .wrapper {
   margin: 0 auto; }
 
 h1 {
-  font-size: 50px; }
+  font-size: 40px;
+  font-family: "Unlock", cursive; }
+
+h2 {
+  font-weight: 400; }
 
 h1, h2 {
   text-align: center;
@@ -591,6 +601,46 @@ h1, h2 {
 .beer-mug-image-div {
   max-width: 5%;
   margin-left: 10%; }
+
+form {
+  width: 60%;
+  margin-top: 25px; }
+
+.question {
+  width: 100%;
+  margin-top: 35px; }
+
+.question-one, .question-two {
+  border-bottom: 0.5px solid #73716e;
+  padding-bottom: 30px; }
+
+.question-three {
+  padding-bottom: 60px; }
+
+label {
+  margin-right: 2%; }
+
+label:hover {
+  color: #73716e; }
+
+div.iradio_square-grey {
+  margin-right: .5%; }
+
+.button-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.button {
+  font-size: 18px;
+  background: #e8871e;
+  color: white;
+  padding: 16px 65px;
+  border-radius: 50px;
+  border: none; }
 
 li {
   list-style: none; }

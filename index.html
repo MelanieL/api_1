@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unlock" rel="stylesheet">
     <link rel="stylesheet" href="resources/styles/style.css">
     <title>PairingApp </title>
     <link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon" />
@@ -25,6 +26,7 @@
     <meta name="msapplication-square150x150logo" content="resources/images/mediumtile.png" />
     <meta name="msapplication-wide310x150logo" content="resources/images/widetile.png" />
     <meta name="msapplication-square310x310logo" content="resources/images/largetile.png" />
+    <link href="resources/styles/skins/square/grey.css" rel="stylesheet">
 </head>
 <body>
 
@@ -61,7 +63,7 @@
                 <!-- asking user the country of origin that they would like their selections to originate from  -->
                 <!-- check boxes -->
                 <div class="question-two question">
-                    <p class="question-only">Product origin</p>
+                    <p class="question-only">Choose beer by country:</p>
                     <label for="canada" class="answer">
                         <input type="radio" class="canada" name="q2" id="canada" value="">Canada
                     </label>
@@ -83,7 +85,7 @@
                 </div>
                 <!-- asking user what type of beer they would like to drink -->
                 <div class="question-three question">
-                    <p class="question-only">Type of beer</p>
+                    <p class="question-only">Choose type of beer:</p>
                     <label for="lager" class="answer">
                         <input type="radio" class="lager" name="q3" id="lager" value="">Lager
                     </label>
@@ -103,8 +105,10 @@
                         <input type="radio" class="sour" name="q3" id="sour" value="">Sour Beer
                     </label>
                 </div>
-                <input class="button submit_button" type="submit" value="Beer Me">
-                <input class="button reset_button" type="reset" value="Reset">
+                <div class="button-div">
+                    <input class="button submit_button" type="submit" value="Beer Me">
+                    <input class="button reset_button" type="reset" value="Reset">
+                </div>
             </form> 
         </div>
         
@@ -166,6 +170,7 @@
 
     
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="resources/plugins/icheck.js"></script>
     <script src='resources/scripts/script.js'></script>
 </body>
 </html>
