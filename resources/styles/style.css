@@ -655,7 +655,7 @@ div.iradio_square-grey {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 1500px;
+  height: 520px;
   margin: 0 auto;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -670,16 +670,11 @@ div.iradio_square-grey {
   padding: 40px 0; }
 
 .snack-pairings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 60%;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  display: none;
+  width: 60%; }
+
+.pairing-four {
+  width: 80%; }
 
 .snack-pairings img {
   width: 40px; }
@@ -703,14 +698,11 @@ li {
   -ms-flex-align: center;
   align-items: center; }
 
-.sweet-left-side, .salty-right-side {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+.sweet-left-side {
+  float: left; }
+
+.salty-right-side {
+  float: right; }
 
 .icon-title-container h4 {
   padding-left: 20px;
