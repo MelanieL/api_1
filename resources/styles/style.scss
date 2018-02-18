@@ -127,7 +127,7 @@ div.iradio_square-grey {
     color: white;
     display: flex;
     flex-direction: column;
-    height: 1500px;
+    height: 520px;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -139,11 +139,26 @@ div.iradio_square-grey {
 	padding: 40px 0;
 }
 
+// .snack-pairings-hidden-one {
+//     display: none;
+// }
+
+// .flex {
+//     display: flex;
+// }
+
 .snack-pairings {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    display: none;
+    // visibility: hidden;
     width: 60%;
-    justify-content: space-around;
+    // justify-content: space-around;
+}
+
+.pairing-four {
+    width: 80%;
 }
 
 .snack-pairings img {
@@ -166,8 +181,16 @@ li {
 }
 
 .sweet-left-side, .salty-right-side {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+}
+
+.sweet-left-side {
+    float: left;
+}
+
+.salty-right-side {
+    float: right;
 }
 
 .icon-title-container h4 {

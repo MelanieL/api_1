@@ -9,6 +9,32 @@ pairingApp.getDrink = (aDrink) => {
         pairingApp.userPriceChoice = $('input[name="q1"]:checked').attr('class');
         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
+
+        if (userTypeChoice === "lager") {
+            $('.pairing-one').show();
+            e.preventDefault();
+        } else if (userTypeChoice === "pilsner") {
+            $('.pairing-one').show();
+            e.preventDefault();
+        } else if (userTypeChoice === "stout") {
+            $('.pairing-two').show();
+            e.preventDefault();
+        } else if (userTypeChoice === "porter") {
+            $('.pairing-two').show();
+            e.preventDefault();
+        } else if (userTypeChoice === "ipa") {
+            $('.pairing-three').show();
+            e.preventDefault();
+        } else if (userTypeChoice === "sour") {
+            // $('.pairing-one').addClass('flex');
+            $('.pairing-four').show();
+            e.preventDefault();
+        } else {
+            console.log("something went wrong!");
+        }
+
+
+
         $.ajax({
             url: 'http://lcboapi.com/products?',
             dataType: 'jsonp',
@@ -26,6 +52,29 @@ pairingApp.getDrink = (aDrink) => {
         });
     })
 }
+
+// pairingApp.pairingAnswer = () => {
+
+//     if (userTypeChoice === "pilsner") {
+//         $('.pairing-one').show();
+//         event.preventDefault();
+//     }
+//     // else if (finalDisplay === "milano") {
+//     //     $('.result_milano').show();
+//     //     event.preventDefault();
+//     // }
+//     // else if (finalDisplay === "millfalc") {
+//     //     $('.result_millfalc').show();
+//     //     event.preventDefault();
+//     // }
+//     // else if (finalDisplay === "enterprise") {
+//     //     $('.result_enterprise').show();
+//     //     event.preventDefault();
+//     // }
+//     // else {
+//     //     console.log("something went wrong!");
+//     // }
+// }
 
 // This works
 pairingApp.filterByUnits = (answers) => {
@@ -154,6 +203,7 @@ pairingApp.init = () => {
     // on reload no boxes are checked
     $('input').prop('checked', false);
     pairingApp.getDrink();
+    // pairingApp.pairingAnswer();
     // pairingApp.events();
 }
 
