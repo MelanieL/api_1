@@ -115,6 +115,66 @@ div.iradio_square-grey {
     border: none;
 }
 
+
+// snack pairing
+
+.snack-container {
+    background: $color4;
+    margin-top: 60px;
+}
+
+.snack-container .wrapper {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 1500px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.snack-container .wrapper h3 {
+    text-align: center;
+	font-size: 36px;
+	padding: 40px 0;
+}
+
+.snack-pairings {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.snack-pairings img {
+    width: 40px;
+}
+
 li {
     list-style: none;
+    line-height: 1.5;
+}
+
+.sweet-icon-div {
+    height: 44px;
+}
+
+.icon-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sweet-left-side, .salty-right-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-title-container h4 {
+    padding-left: 20px;
+    font-size: 26px;
+}
+
+ul {
+    padding-left: 60px;
 }
