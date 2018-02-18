@@ -56,19 +56,20 @@ pairingApp.filterByPrice = (singlesOnly) => {
 
         finalAnswer.forEach((drink) => {
                 // console.log(drink);
-                $('.api-answer').append(`<p>${drink.name}</p>`);
-                $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
-                const priceInDollars = drink.price_in_cents / 100
-                const priceRounded = (priceInDollars).toFixed(2);
-                $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
-                $('.api-answer').append(`<a class="api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
-                // $('.api-answer').append(container);
-                if(drink.image_url !== null) {
-                    $('.api-answer').append(`<img src=${drink.image_url}>`);
-                }else {
-                    $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
-                }
-            })
+            $('.api-answer').append(`<p>${drink.name}</p>`);
+            $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
+            const priceInDollars = drink.price_in_cents / 100
+            const priceRounded = (priceInDollars).toFixed(2);
+            $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
+            $('.api-answer').append(`<a class="button api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
+            // $('.api-answer').append(container);
+            if(drink.image_url !== null) {
+                $('.api-answer').append(`<img src=${drink.image_url}>`);
+            }else {
+                $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+            }
+        })
+        // console.log("No beers match your selections");
             
             // console.log(finalAnswer);
 
@@ -93,12 +94,13 @@ pairingApp.filterByPrice = (singlesOnly) => {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
         })
+        // console.log("No beers match your selections");
         // console.log(finalAnswer);
         // pairingApp.displayDrinkAnswers(answers);
 
     } else if (pairingApp.userPriceChoice === "expensive") {
-        console.log(expensiveAnswers);
-        console.log('consolelogworks');
+        // console.log(expensiveAnswers);
+        // console.log('consolelogworks');
         let finalAnswer = expensiveAnswers;
 
         finalAnswer.forEach((drink) => {
@@ -116,11 +118,12 @@ pairingApp.filterByPrice = (singlesOnly) => {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
         })
+        // console.log("No beers match your selections");
         // console.log(finalAnswer);
         // pairingApp.displayDrinkAnswers(answers);
     } else {
         
-        console.log("No beers match your selections");
+        // console.log("No beers match your selections");
     }
     // pairingApp.displayDrinkAnswers(answers);
 }
@@ -134,7 +137,22 @@ pairingApp.filterByPrice = (singlesOnly) => {
 // pairingApp.events = () => {
 // }
 
+
+// iCheck plugin for radio buttons
+$('input').iCheck({
+    checkboxClass: 'icheckbox_square-grey',
+    radioClass: 'iradio_square-grey',
+    increaseArea: '20%' // optional
+});
+
+// This is where the reset command starts
+$('.reset_button').click(function () {
+    location.reload();
+});
+
 pairingApp.init = () => {
+    // on reload no boxes are checked
+    $('input').prop('checked', false);
     pairingApp.getDrink();
     // pairingApp.events();
 }
