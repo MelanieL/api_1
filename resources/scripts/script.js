@@ -86,7 +86,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
             if(drink.image_url !== null) {
                 $('.api-answer').append(`<div class="drink-img-div"><img src=${drink.image_thumb_url}></div>`);
             } else {
-                $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+                $('.api-answer').append(`<div class="drink-img-div"><img src="resources/images/no-image.jpg"></div>`);
             }
             $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
         })
@@ -111,7 +111,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
             if (drink.image_url !== null) {
                 $('.api-answer').append(`<div class="drink-img-div"><img src=${drink.image_thumb_url}></div>`);
             } else {
-                $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+                $('.api-answer').append(`<div class="drink-img-div"><img src="resources/images/no-image.jpg"></div>`);
             }
             $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
         })
