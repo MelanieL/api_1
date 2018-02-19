@@ -77,14 +77,14 @@ pairingApp.filterByPrice = (singlesOnly) => {
         finalAnswer.forEach((drink) => {
             // console.log(drink);
             // $('.api-answer .').append(`<div class="item-container-div-test"></div>`)
-            $('.api-answer').append(`<p><span class="bold">${drink.name}</span></p>`);
+            $('.api-answer').append(`<h5 class="margin-top"><span class="bold">${drink.name}</span></h5>`);
             $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
             const priceInDollars = drink.price_in_cents / 100
             const priceRounded = (priceInDollars).toFixed(2);
             $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
             // $('.api-answer').append(container);
             if(drink.image_url !== null) {
-                $('.api-answer').append(`<img src=${drink.image_thumb_url}>`);
+                $('.api-answer').append(`<div class="drink-img-div"><img src=${drink.image_thumb_url}></div>`);
             } else {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
@@ -102,14 +102,14 @@ pairingApp.filterByPrice = (singlesOnly) => {
 
         finalAnswer.forEach((drink) => {
             // console.log(drink);
-            $('.api-answer').append(`<p>${drink.name}</p>`);
+            $('.api-answer').append(`<h5 class="margin-top"><span class="bold">${drink.name}</span></h5>`);
             $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
             const priceInDollars = drink.price_in_cents / 100
             const priceRounded = (priceInDollars).toFixed(2);
             $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
             // $('.api-answer').append(container);
             if (drink.image_url !== null) {
-                $('.api-answer').append(`<img src=${drink.image_thumb_url}>`);
+                $('.api-answer').append(`<div class="drink-img-div"><img src=${drink.image_thumb_url}></div>`);
             } else {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
@@ -126,7 +126,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
 
         finalAnswer.forEach((drink) => {
             // console.log(drink);
-            $('.api-answer').append(`<p>${drink.name}</p>`);
+            $('.api-answer').append(`<h5 class="margin-top"><span class="bold">${drink.name}</span></h5>`);
             $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
             const priceInDollars = drink.price_in_cents / 100
             const priceRounded = (priceInDollars).toFixed(2);
@@ -135,7 +135,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
             if (drink.image_url !== null) {
                 $('.api-answer').append(`<img src=${drink.image_thumb_url}>`);
             } else {
-                $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
+                $('.api-answer').append(`<div class="drink-img-div"><img src=${drink.image_thumb_url}></div>`);
             }
             $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
         })
