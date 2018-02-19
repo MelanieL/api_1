@@ -659,7 +659,7 @@ div.iradio_square-grey {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 520px;
+  height: auto;
   margin: 0 auto;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -675,7 +675,8 @@ div.iradio_square-grey {
 
 .snack-pairings {
   display: none;
-  width: 60%; }
+  width: 60%;
+  padding-bottom: 40px; }
 
 .pairing-four {
   width: 80%; }
@@ -730,13 +731,14 @@ ul {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  padding-bottom: 60px; }
 
 .beer-selections .wrapper h3 {
   color: black;
   text-align: center;
   font-size: 36px;
-  padding: 40px 0; }
+  padding: 80px 0 40px 0; }
 
 .api-answer {
   display: -webkit-box;
@@ -747,6 +749,11 @@ ul {
   -ms-flex-direction: column;
   flex-direction: column; }
 
+.api-answer h5 {
+  text-align: center;
+  font-size: 22px;
+  padding: 10px; }
+
 a {
   text-decoration: none; }
 
@@ -754,12 +761,18 @@ a {
   text-align: center;
   margin: 5px; }
 
-.api-answer p:first-of-type {
-  margin-bottom: 10px; }
+.margin-top {
+  margin-top: 60px; }
+
+.drink-img-div {
+  text-align: center; }
 
 .button-api {
-  margin-bottom: 60px;
-  position: relative; }
+  position: relative;
+  padding: 13px 0 0 0;
+  width: 178px;
+  height: 50px;
+  margin: 0 auto; }
 
 .button-api::after {
   position: absolute;
@@ -788,4 +801,11 @@ footer .wrapper {
   flex-direction: row;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-top: 20px; }
+
+footer a {
+  color: white; }
+
+footer a:hover {
+  color: #e8871e; }
