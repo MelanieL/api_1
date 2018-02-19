@@ -62,7 +62,6 @@ h1, h2 {
 .beer-mug-image-div {
     max-width: 5%;
     margin-left: 10%;
-    // height: 
 }
 
 // main styles begin
@@ -89,7 +88,6 @@ form {
 
 label {
     margin-right: 2%;
-    // padding: 20px;
 }
 
 label:hover {
@@ -98,7 +96,6 @@ label:hover {
 
 div.iradio_square-grey {
     margin-right: .5%;
-    // margin-left: 2%;
 }
 
 .button-div {
@@ -113,6 +110,7 @@ div.iradio_square-grey {
     padding: 16px 65px;
     border-radius: 50px;
     border: none;
+    text-align: center;
 }
 
 
@@ -139,22 +137,9 @@ div.iradio_square-grey {
 	padding: 40px 0;
 }
 
-// .snack-pairings-hidden-one {
-//     display: none;
-// }
-
-// .flex {
-//     display: flex;
-// }
-
 .snack-pairings {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: nowrap;
     display: none;
-    // visibility: hidden;
     width: 60%;
-    // justify-content: space-around;
 }
 
 .pairing-four {
@@ -180,11 +165,6 @@ li {
     align-items: center;
 }
 
-.sweet-left-side, .salty-right-side {
-    // display: flex;
-    // flex-direction: column;
-}
-
 .sweet-left-side {
     float: left;
 }
@@ -200,4 +180,75 @@ li {
 
 ul {
     padding-left: 60px;
+}
+
+// This is where the API answers start
+
+
+.beer-selections .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.beer-selections .wrapper h3 {
+    color: black;
+    text-align: center;
+	font-size: 36px;
+	padding: 40px 0;
+}
+
+.api-answer {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.api-answer p {
+    text-align: center;
+    margin: 5px;
+}
+
+.api-answer p:first-of-type {
+    margin-bottom: 10px;
+}
+
+.button-api {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.button-api::after {
+	position: absolute;
+	height: 1px;
+	width: 550px;
+	border-bottom: 1px solid $color6;
+	content: "";
+	top: 80px;
+	left: -160px;
+}
+
+// Footer starts here
+
+footer {
+    background-color: $color6;
+    color: white;
+    display: flex;
+}
+
+footer .wrapper {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+footer p {
+
 }

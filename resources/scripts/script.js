@@ -5,7 +5,6 @@ const pairingApp = {};
 pairingApp.getDrink = (aDrink) => {
     $('form').on('submit', function (e) {
         e.preventDefault();
-        // 0 cents to 250 = cheap, 250 to 500 = mid, 500 and up = expensive
         pairingApp.userPriceChoice = $('input[name="q1"]:checked').attr('class');
         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
@@ -26,14 +25,11 @@ pairingApp.getDrink = (aDrink) => {
             $('.pairing-three').show();
             e.preventDefault();
         } else if (userTypeChoice === "sour") {
-            // $('.pairing-one').addClass('flex');
             $('.pairing-four').show();
             e.preventDefault();
         } else {
             console.log("something went wrong!");
         }
-
-
 
         $.ajax({
             url: 'http://lcboapi.com/products?',
@@ -41,9 +37,7 @@ pairingApp.getDrink = (aDrink) => {
             method: 'GET',
             access_key: 'MDphODVlYjk0Ni0xMDQ1LTExZTgtYTg0My1lMzE1YjBiZWVjYzI6RHo3bktkcG9TNkt5b2FqZHFxOFpkSEVHWGoxVEVvZ2k5MmtZ',
             data: {
-                // q: 'lager pilsner+canada',
                 q: `${userOriginChoice}+${userTypeChoice}`,
-                // Images 'http;www.lcmbo.com/product/product/${orudoct.id}'
                 per_page: 50,
             }
         }).then((res) => {
@@ -52,29 +46,6 @@ pairingApp.getDrink = (aDrink) => {
         });
     })
 }
-
-// pairingApp.pairingAnswer = () => {
-
-//     if (userTypeChoice === "pilsner") {
-//         $('.pairing-one').show();
-//         event.preventDefault();
-//     }
-//     // else if (finalDisplay === "milano") {
-//     //     $('.result_milano').show();
-//     //     event.preventDefault();
-//     // }
-//     // else if (finalDisplay === "millfalc") {
-//     //     $('.result_millfalc').show();
-//     //     event.preventDefault();
-//     // }
-//     // else if (finalDisplay === "enterprise") {
-//     //     $('.result_enterprise').show();
-//     //     event.preventDefault();
-//     // }
-//     // else {
-//     //     console.log("something went wrong!");
-//     // }
-// }
 
 // This works
 pairingApp.filterByUnits = (answers) => {
@@ -104,19 +75,20 @@ pairingApp.filterByPrice = (singlesOnly) => {
         let finalAnswer = cheapAnswers;
 
         finalAnswer.forEach((drink) => {
-                // console.log(drink);
-            $('.api-answer').append(`<p>${drink.name}</p>`);
+            // console.log(drink);
+            // $('.api-answer .').append(`<div class="item-container-div-test"></div>`)
+            $('.api-answer').append(`<p><span class="bold">${drink.name}</span></p>`);
             $('.api-answer').append(`<p>Product ID: ${drink.id}</p>`);
             const priceInDollars = drink.price_in_cents / 100
             const priceRounded = (priceInDollars).toFixed(2);
             $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
-            $('.api-answer').append(`<a class="button api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
             // $('.api-answer').append(container);
             if(drink.image_url !== null) {
-                $('.api-answer').append(`<img src=${drink.image_url}>`);
-            }else {
+                $('.api-answer').append(`<img src=${drink.image_thumb_url}>`);
+            } else {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
+            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
         })
         // console.log("No beers match your selections");
             
@@ -135,13 +107,13 @@ pairingApp.filterByPrice = (singlesOnly) => {
             const priceInDollars = drink.price_in_cents / 100
             const priceRounded = (priceInDollars).toFixed(2);
             $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
-            $('.api-answer').append(`<a class="api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
             // $('.api-answer').append(container);
             if (drink.image_url !== null) {
-                $('.api-answer').append(`<img src=${drink.image_url}>`);
+                $('.api-answer').append(`<img src=${drink.image_thumb_url}>`);
             } else {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
+            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
         })
         // console.log("No beers match your selections");
         // console.log(finalAnswer);
@@ -159,13 +131,13 @@ pairingApp.filterByPrice = (singlesOnly) => {
             const priceInDollars = drink.price_in_cents / 100
             const priceRounded = (priceInDollars).toFixed(2);
             $('.api-answer').append(`<p>$ ${priceRounded}</p>`);
-            $('.api-answer').append(`<a class="api-no-image" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
             // $('.api-answer').append(container);
             if (drink.image_url !== null) {
-                $('.api-answer').append(`<img src=${drink.image_url}>`);
+                $('.api-answer').append(`<img src=${drink.image_thumb_url}>`);
             } else {
                 $('.api-answer').append(`<img src="resources/images/no-image.jpg">`);
             }
+            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
         })
         // console.log("No beers match your selections");
         // console.log(finalAnswer);
