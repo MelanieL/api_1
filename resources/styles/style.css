@@ -627,7 +627,7 @@ label:hover {
   color: #73716e; }
 
 div.iradio_square-grey {
-  margin-right: .5%; }
+  margin-right: 1.5%; }
 
 .button-div {
   display: -webkit-box;
@@ -809,3 +809,86 @@ footer a {
 
 footer a:hover {
   color: #e8871e; }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1140px) {
+  h1 {
+    font-size: 30px; }
+  h2 {
+    font-size: 18px; }
+  .beer-mug-image-div {
+    margin-left: 5%; }
+  h1, h2 {
+    width: 90%; } }
+
+@media (max-width: 840px) {
+  .question {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  label {
+    padding-bottom: 10px; }
+  div.iradio_square-grey {
+    margin-right: 1.5%; } }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 730px) {
+  h1 {
+    font-size: 24px; }
+  h2 {
+    font-size: 16px; }
+  .snack-container .wrapper h3,
+  .beer-selections .wrapper h3 {
+    font-size: 24px; }
+  .snack-pairings {
+    width: 31%; }
+  .sweet-left-side {
+    margin-bottom: 50px; }
+  .salty-right-side {
+    float: left; }
+  .button-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  input {
+    margin: 20px 0; }
+  footer .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset; }
+  footer {
+    font-size: 14px; }
+  footer .wrapper p {
+    margin: 5px; } }
+
+/* Landscape phones and down */
+@media (max-width: 600px) {
+  .wrapper {
+    width: 100%; }
+  .beer-mug-image-div {
+    display: none; }
+  .header-title {
+    width: 100%; }
+  h1 {
+    font-size: 22px; }
+  .button-api::after {
+    width: 100px;
+    border-bottom: .5px solid #73716e;
+    left: 40px; }
+  .snack-pairings {
+    width: 50%; }
+  .snack-container .wrapper h3,
+  .beer-selections .wrapper h3 {
+    padding: 40px 10px; } }
