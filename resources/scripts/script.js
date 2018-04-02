@@ -46,12 +46,12 @@ pairingApp.getDrink = (aDrink) => {
     })
 }
 
-pairingApp.clearForm = () => {
-    $("#submit").click(function () {
-        $('input').prop('checked', false);
-        $("#form")[0].reset();
-    })
-}
+// pairingApp.clearForm = () => {
+//     $("#submit").click(function () {
+//         $('input').prop('checked', false);
+//         $("#form")[0].reset();
+//     })
+// }
 
 pairingApp.filterByUnits = (answers) => {
     const singlesOnly = answers.filter((item) => {
@@ -149,7 +149,7 @@ pairingApp.init = () => {
     $('input').prop('checked', false);
     $('a').smoothScroll();
     pairingApp.getDrink();
-    pairingApp.clearForm();
+    // pairingApp.clearForm();
 }
 
 // Document ready
