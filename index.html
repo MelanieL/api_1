@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Unlock" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Eczar:700,800|Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="resources/styles/style.css">
-    <title>PairingApp </title>
+    <title>Brews & Bites</title>
     <link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="57x57" href="resources/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="resources/images/apple-touch-icon-60x60.png">
@@ -32,26 +31,25 @@
 
     <header>
         <div class="wrapper">
-            <div class="beer-mug-image-div">
-                <!-- Credential for image: Beer by Oliver Gomez from the Noun Project -->
-                <img src="resources/images/beer-mug.png" alt="">
-            </div>
             <div class="header-title">
-                <h1>Snacks are ale you need</h1>
-                <h2>Pick your beer, let the quiz pair your snack!</h2>
+                <div class="beer-mug-image-div">
+                     <!-- Image credit: beer and taco by webar4i from the Noun Project -->
+                    <img src="resources/images/logo_orange.png" alt="">
+                </div>
+                <h1>Brews & Bites</h1>
+                <h2>Beer and snack pairing quiz for non-fancy folks, with filtered selections from the LCBO!</h2>
+                <a class="button" href="#quiz">Take the quiz!</a>
             </div>
         </div>
     </header>
 
-    <main>
-        <div class="wrapper">
+    <main id="quiz">
+        <div class="wrapper quiz">
             <form>
-                <!-- asking user for their desired price range -->
-                <!-- using radio buttons -->
                 <div class="question-one question">
-                    <p class="question-only">How much money would you like to spend?</p>
+                    <p class="question-only">How much would you like to spend?</p>
                     <label for="cheap"  class="answer">
-                        <input type="radio" class="cheap" name="q1" id="cheap" value="cheap">$
+                        <input type="radio" class="cheap" name="q1" id="cheap" value="cheap" required>$
                     </label>
                     <label for="mid" class="answer">
                         <input type="radio" class="mid" name="q1" id="mid" value="mid">$$
@@ -60,12 +58,10 @@
                         <input type="radio" class="expensive" name="q1" id="expensive" value="expensive">$$$
                     </label>
                 </div>
-                <!-- asking user the country of origin that they would like their selections to originate from  -->
-                <!-- check boxes -->
                 <div class="question-two question">
-                    <p class="question-only">Choose beer by country:</p>
+                    <p class="question-only">Which origin/style do you prefer?</p>
                     <label for="canada" class="answer">
-                        <input type="radio" class="canada" name="q2" id="canada" value="">Canada
+                        <input type="radio" class="canada" name="q2" id="canada" value="" required>Canada
                     </label>
                     <label for="usa" class="answer">
                         <input type="radio" class="usa" name="q2" id="usa" value="">United States
@@ -77,11 +73,10 @@
                         <input type="radio" class="mexico" name="q2" id="mexico" value="">Mexico
                     </label>
                 </div>
-                <!-- asking user what type of beer they would like to drink -->
                 <div class="question-three question">
-                    <p class="question-only">Choose type of beer:</p>
+                    <p class="question-only">Which type of beer would you like?</p>
                     <label for="lager" class="answer">
-                        <input type="radio" class="lager" name="q3" id="lager" value="">Lager
+                        <input type="radio" class="lager" name="q3" id="lager" value="" required>Lager
                     </label>
                     <label for="pilsner" class="answer">
                         <input type="radio" class="pilsner" name="q3" id="pilsner" value="">Pilsner
@@ -105,145 +100,111 @@
         
         <div class="snack-container">
             <div class="wrapper">
-        <!-- snack pairings live here -->
-        <!-- user is given yummy snacks that go best with their beer selections -->
-                <h3>Based on your selections, your snack pairings are:</h3>
-
-                <!-- <div class="snack-pairings-hidden-one"> -->
-                    <div class="snack-pairings pairing-one">
-                        <!-- lagers and pilsners -->
-                       <div class="sweet-left-side clearfix">
-                           <div class="icon-title-container">
-                                <div class="sweet-icon-div">
-                                    <img src="resources/images/sweet.png" alt="sweet icon">
-                                </div>
-                                <h4>Sweet</h4>
-                           </div>
-                            <ul class="sweet-food">
-                                <li>Licorice</li>
-                                <li>Milk Chocolate</li>
-                            </ul>
-                       </div>
-                         <div class="salty-right-side clearfix">
-                            <div class="icon-title-container">
-                                <div class="salty-icon-div">
-                                    <img src="resources/images/salty.png" alt="salt shaker icon">
-                                </div>
-                                <h4>Salty</h4>
+                <div class="snack-pairings pairing-one">
+                    <!-- lagers and pilsners -->
+                    <h3>Bites for Lagers & Pilsners:</h3>
+                    <div class="sweet-left-side clearfix">
+                        <div class="icon-title-container">
+                            <div class="sweet-icon-div">
+                                <img src="resources/images/sweet.png" alt="sweet icon">
+                                    <!-- donut by Alex Furgiuele from the Noun Project -->
                             </div>
-                            <ul class="salty-food">
-                                <li>Havarti</li>
-                                <li>Monterey Jack</li>
-                                <li>Pretzels</li>
-                                <li>Cheddar-Mild</li>
-                                <li>Trail Mix</li>
-                                <li>Nachos</li>
-                                <li>Pizza</li>
-                                <li>Mozzarella Sticks</li>
-                            </ul>
+                            <h4>Sweet</h4>
                         </div>
+                        <ul class="sweet-food">
+                            <li>Licorice</li>
+                            <li>Milk Chocolate</li>
+                        </ul>
                     </div>
-                
-
-                
-                    <div class="snack-pairings pairing-two">
-                        <!-- stout and porter -->
-                        <div class="sweet-left-side">
-                            <div class="icon-title-container">
-                                <div class="sweet-icon-div">
-                                    <img src="resources/images/sweet.png" alt="sweet icon">
-                                </div>
-                                <h4>Sweet</h4>
+                        <div class="salty-right-side clearfix">
+                        <div class="icon-title-container">
+                            <div class="salty-icon-div">
+                                <img src="resources/images/salty.png" alt="salt shaker icon">
+                                    <!-- cookie by RROOK from the Noun Project -->
                             </div>
-                            <ul class="sweet-food">
-                                <li>Cupcakes</li>
-                                <li>Reeses Pieces</li>
-                                <li>Twix</li>
-                                <li>M & M's</li>
-                                <li>Chocolate Cake</li>
-                                <li>Cookies</li>
-                            </ul>
+                            <h4>Salty</h4>
                         </div>
-                        <div class="salty-right-side">
-                            <div class="icon-title-container">
-                                <div class="salty-icon-div">
-                                    <img src="resources/images/salty.png" alt="salt shaker icon">
-                                </div>
-                                <h4>Salty</h4>
-                            </div>
-                            <ul class="salty-food">
-                                <li>Cheesies</li>
-                                <li>BBQ Chips</li>
-                                <li>Gouda</li>
-                                <li>Cheddar-Aged</li>
-                                <li>Cheddar-Sharp</li>
-                            </ul>
-                        </div>
+                        <ul class="salty-food">
+                            <li>Havarti</li>
+                            <li>Monterey Jack</li>
+                            <li>Pretzels</li>
+                            <li>Cheddar - Mild</li>
+                            <li>Trail Mix</li>
+                            <li>Nachos</li>
+                            <li>Pizza</li>
+                            <li>Mozzarella Sticks</li>
+                        </ul>
                     </div>
-                    <div class="snack-pairings pairing-three">
-                        <!-- ipa -->
-                        <div class="sweet-left-side">
-                            <div class="icon-title-container">
-                                <div class="sweet-icon-div">
-                                    <img src="resources/images/sweet.png" alt="sweet icon">
-                                </div>
-                                <h4>Sweet</h4>
+                </div>
+                            
+                <div class="snack-pairings pairing-two">
+                    <!-- stout and porter -->
+                    <h3>Bites for Stouts & Porters:</h3>
+                    <div class="sweet-left-side">
+                        <div class="icon-title-container">
+                            <div class="sweet-icon-div">
+                                <img src="resources/images/sweet.png" alt="sweet icon">
                             </div>
-                            <ul class="sweet-food">
-                                <li>Sour Patch Kids</li>
-                                <li>Carrot Cake</li>
-                            </ul>
+                            <h4>Sweet</h4>
                         </div>
-                        <div class="salty-right-side">
-                            <div class="icon-title-container">
-                                <div class="salty-icon-div">
-                                    <img src="resources/images/salty.png" alt="salt shaker icon">
-                                </div>
-                                <h4>Salty</h4>
-                            </div>
-                            <ul class="salty-food">
-                                <li>Potato Chips</li>
-                                <li>Buttered Popcorn</li>
-                                <li>Guacamole</li>
-                                <li>Cheesies</li>
-                                <li>Cheddar-Sharp</li>
-                                <li>Cheddar-Aged</li>
-                                <li>Spicey Food</li>
-                                <li>Takis</li>
-                            </ul>
-                        </div>
+                        <ul class="sweet-food">
+                            <li>Cupcakes</li>
+                            <li>Reeses Pieces</li>
+                            <li>Twix</li>
+                            <li>M & M's</li>
+                            <li>Chocolate Cake</li>
+                            <li>Cookies</li>
+                        </ul>
                     </div>
-                    <div class="snack-pairings pairing-four">
-                        <!-- sour beer -->
-                        <div class="sweet-left-side">
-                            <div class="icon-title-container">
-                                <div class="sweet-icon-div">
-                                    <img src="resources/images/sweet.png" alt="sweet icon">
-                                </div>
-                                <h4>Sweet</h4>
+                    <div class="salty-right-side">
+                        <div class="icon-title-container">
+                            <div class="salty-icon-div">
+                                <img src="resources/images/salty.png" alt="salt shaker icon">
                             </div>
-                            <ul class="sweet-food">
-                                <li>There are no snack pairings for your selection</li>
-                            </ul>
+                            <h4>Salty</h4>
                         </div>
-                        <div class="salty-right-side">
-                            <div class="icon-title-container">
-                                <div class="salty-icon-div">
-                                    <img src="resources/images/salty.png" alt="salt shaker icon">
-                                </div>
-                                <h4>Salty</h4>
-                            </div>
-                            <ul class="salty-food">
-                                <li>Stinky Cheeses (ex. Blue Cheese)</li>
-                                <li>Cured Pork</li>
-                                <li>Salty Snack Meats</li>
-                                <li>Brie (Especially Triple Cream</li>
-                            </ul>
-                        </div>
+                        <ul class="salty-food">
+                            <li>Cheesies</li>
+                            <li>BBQ Chips</li>
+                            <li>Gouda</li>
+                            <li>Cheddar - Aged</li>
+                            <li>Cheddar - Sharp</li>
+                        </ul>
                     </div>
+                </div>
 
-                <!-- </div> -->
-
+                <div class="snack-pairings pairing-three">
+                    <!-- ipa -->
+                    <h3>Bites for IPAs:</h3>
+                    <div class="sweet-left-side">
+                        <div class="icon-title-container">
+                            <div class="sweet-icon-div">
+                                <img src="resources/images/sweet.png" alt="sweet icon">
+                            </div>
+                            <h4>Sweet</h4>
+                        </div>
+                        <ul class="sweet-food">
+                            <li>Sour Patch Kids</li>
+                            <li>Carrot Cake</li>
+                        </ul>
+                    </div>
+                    <div class="salty-right-side">
+                        <div class="icon-title-container">
+                            <div class="salty-icon-div">
+                                <img src="resources/images/salty.png" alt="salt shaker icon">
+                            </div>
+                            <h4>Salty</h4>
+                        </div>
+                        <ul class="salty-food">
+                            <li>Potato Chips</li>
+                            <li>Buttered Popcorn</li>
+                            <li>Guacamole</li>
+                            <li>Cheesies</li>
+                            <li>Cheddar - Sharp</li>
+                            <li>Cheddar - Aged</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -251,7 +212,6 @@
         <!-- users scroll through beer selection here -->
         <div class="beer-selections">
             <div class="wrapper">
-                <h3>Based on your selections, your beer options are:</h3>
                 <div class="api-answer">
                 </div>
             </div>
@@ -261,7 +221,7 @@
 
     <footer>
         <div class="wrapper">
-            <p>&copy; Paige Power & Melanie Phillips</p>
+            <p>&copy; 2018</p>
             <p>API Dataset: <a href="https://lcboapi.com/">https://lcboapi.com/</a></p>
         </div>
     </footer>

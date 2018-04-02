@@ -1,5 +1,5 @@
-$bodyFont: 'Lato', sans-serif;
-$titleFont: 'Unlock', cursive;
+$bodyFont: 'Roboto', sans-serif;
+$titleFont: 'Eczar', serif;
 
 body {
     font-size: 18px;
@@ -10,10 +10,40 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: $color10;
     margin: 0;
     padding: 0;
 }
 
+h1 {
+    font-size: 40px;
+    font-family: $titleFont;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 400;
+    width: 70%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    color: $color11;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+    color: $color8;
+}
+
 .bold {
     font-weight: 700;
+}
+
+input:focus {
+    outline: none;
 }
