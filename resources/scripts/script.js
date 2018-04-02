@@ -2,11 +2,14 @@ const pairingApp = {};
 
 pairingApp.getDrink = (aDrink) => {
     $('form').on('submit', function (e) {
+        // This scrolls to snack results
+        $('html, body').animate({
+            scrollTop: $("#results").offset().top
+        }, 500);
         e.preventDefault();
         pairingApp.userPriceChoice = $('input[name="q1"]:checked').attr('class');
         const userOriginChoice = $('input[name="q2"]:checked').attr('class');
         const userTypeChoice = $('input[name="q3"]:checked').attr('class');
-
         if (userTypeChoice === "lager") {
             $('.pairing-one').show();
             e.preventDefault();
@@ -39,6 +42,14 @@ pairingApp.getDrink = (aDrink) => {
             const displayDrink = res.result;
             pairingApp.filterByUnits(displayDrink);
         });
+
+    })
+}
+
+pairingApp.clearForm = () => {
+    $("#submit").click(function () {
+        $('input').prop('checked', false);
+        $("#form")[0].reset();
     })
 }
 
@@ -76,7 +87,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
             } else {
                 $('.api-answer').append(`<div class="drink-img-div"><img src="resources/images/no-image.png"></div>`);
             }
-            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
+            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}" target="_blank">More Info</a>`)
         })
 
     } else if (pairingApp.userPriceChoice === "mid") {
@@ -93,7 +104,7 @@ pairingApp.filterByPrice = (singlesOnly) => {
             } else {
                 $('.api-answer').append(`<div class="drink-img-div"><img src="resources/images/no-image.jpg"></div>`);
             }
-            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
+            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}" target="_blank">More Info</a>`)
         })
 
     } else if (pairingApp.userPriceChoice === "expensive") {
@@ -110,11 +121,10 @@ pairingApp.filterByPrice = (singlesOnly) => {
             } else {
                 $('.api-answer').append(`<div class="drink-img-div"><img src=${drink.image_thumb_url}></div>`);
             }
-            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}">More Info</a>`)
+            $('.api-answer').append(`<a class="button button-api" href="https://www.lcbo.com/lcbo/product/product/${drink.id}" target="_blank">More Info</a>`)
         })
 
     } else {
-        
         // console.log("No beers match your selections");
     }
 
@@ -124,21 +134,26 @@ pairingApp.filterByPrice = (singlesOnly) => {
 $('input').iCheck({
     checkboxClass: 'icheckbox_square-grey',
     radioClass: 'iradio_square-grey',
-    increaseArea: '20%' // optional
+    increaseArea: '20%'
 });
 
 // This is where the reset command starts
 $('.reset_button').click(function () {
     location.reload();
+    $(window).scrollTop(0);
 });
 
 pairingApp.init = () => {
-    // on reload no boxes are checked
+    window.onbeforeunload = function () { window.scrollTo(0, 0); }
+    $(window).scrollTop(0);
     $('input').prop('checked', false);
+    $('a').smoothScroll();
     pairingApp.getDrink();
+    pairingApp.clearForm();
 }
 
 // Document ready
 $(function () {
+    // This forces the page to reload at the top and ignore previous position
     pairingApp.init();
 });

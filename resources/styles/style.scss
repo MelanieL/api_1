@@ -66,8 +66,7 @@ header .wrapper {
     text-align: center;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
     background: $color8;
 }
 
@@ -114,8 +113,7 @@ label {
     word-spacing: 1.5px;
 }
 
-label:hover,
-label:focus {
+label:hover {
     color: $color8;
 }
 
@@ -130,6 +128,10 @@ div.iradio_square-grey {
 
 // snack pairing
 
+// .snack-container .wrapper {
+//     min-height: 100vh;
+// }
+
 .snack-container .wrapper h3 {
     text-align: center;
 	font-size: 36px;
@@ -140,13 +142,23 @@ div.iradio_square-grey {
     display: none;
     border: 1px solid $color8; 
     border-radius: 10px;
-    margin: 150px 0;
+    margin: 130px 0;
+    // margin: auto 0;
+    min-height: 70vh;
     padding: 30px 50px;
+    position: relative;
     width: 80%;
 }
 
 .snack-pairings img {
     width: 40px;
+}
+
+.snack-pairings a {
+    display: inline-block;
+    position: absolute;
+    top: 80%;
+    left: 34%;
 }
 
 li {
@@ -395,10 +407,6 @@ footer .wrapper {
         border-bottom: .5px solid #73716e;
         left: 40px;
     }
-
-    // .snack-pairings {
-	//     width: 50%;
-    // }
 
     .sweet-left-side,
     .salty-right-side {

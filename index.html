@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115892554-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-115892554-5');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -45,7 +53,7 @@
 
     <main id="quiz">
         <div class="wrapper quiz">
-            <form>
+            <form id="form">
                 <div class="question-one question">
                     <p class="question-only">How much would you like to spend?</p>
                     <label for="cheap"  class="answer">
@@ -92,13 +100,13 @@
                     </label>
                 </div>
                 <div class="button-div">
-                    <input class="button submit_button" type="submit" value="Beer Me">
+                    <input class="button submit_button" type="submit" value="My Results" id="submit">
                     <input class="button reset_button" type="reset" value="Reset">
                 </div>
             </form> 
         </div>
         
-        <div class="snack-container">
+        <div class="snack-container" id="results">
             <div class="wrapper">
                 <div class="snack-pairings pairing-one">
                     <!-- lagers and pilsners -->
@@ -135,6 +143,7 @@
                             <li>Mozzarella Sticks</li>
                         </ul>
                     </div>
+                    <a class="button" href="#beer_results">Where's my brew?</a>
                 </div>
                             
                 <div class="snack-pairings pairing-two">
@@ -171,6 +180,7 @@
                             <li>Cheddar - Sharp</li>
                         </ul>
                     </div>
+                    <a class="button" href="#beer_results">Where's my brew?</a>
                 </div>
 
                 <div class="snack-pairings pairing-three">
@@ -204,13 +214,14 @@
                             <li>Cheddar - Aged</li>
                         </ul>
                     </div>
+                    <a class="button" href="#beer_results">Where's my brew?</a>
                 </div>
             </div>
         </div>
 
            
         <!-- users scroll through beer selection here -->
-        <div class="beer-selections">
+        <div class="beer-selections" id="beer_results">
             <div class="wrapper">
                 <div class="api-answer">
                 </div>
@@ -229,6 +240,7 @@
     
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="resources/plugins/icheck.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
     <script src='resources/scripts/script.js'></script>
 </body>
 </html>
